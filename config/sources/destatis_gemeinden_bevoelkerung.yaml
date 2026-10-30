@@ -1,0 +1,28 @@
+source_id: destatis_gemeinden_bevoelkerung
+title: Fläche und Bevölkerung der Gemeinden Brandenburgs
+type: csv
+url: data/samples/gemeinden_bevoelkerung.csv   # a https:// URL works the same way
+delimiter: ";"
+decimal: ","
+feature_key: AGS
+join: { target_source: bb_gemeinden, on: AGS }
+mapping:
+  Flaeche_km2: flaeche_km2
+  Einwohner: einwohner
+  Maennlich: einwohner_maennlich
+  Weiblich: einwohner_weiblich
+  Einwohner_je_km2: einwohner_je_km2
+  PLZ: plz
+types:
+  flaeche_km2: { type: number, unit: km2 }
+  einwohner: { type: number, unit: Personen }
+  einwohner_maennlich: { type: number, unit: Personen }
+  einwohner_weiblich: { type: number, unit: Personen }
+  einwohner_je_km2: { type: number, unit: "Personen/km2" }
+license: dl-de/by-2-0
+attribution: "© Statistische Ämter des Bundes und der Länder (Destatis), dl-de/by-2-0, Gebietsstand 30.06.2026"
+schedule: "15 3 * * 1"
+details:
+  theme: Bevölkerung
+  publisher: Statistisches Bundesamt (Destatis), Gemeindeverzeichnis GV-ISys
+  keywords: [Einwohner, Fläche, AGS]
