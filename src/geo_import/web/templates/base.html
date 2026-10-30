@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}geo-import-pipeline{% endblock %} – Demo</title>
+<link rel="stylesheet" href="{{ base }}/static/style.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<header>
+  <strong>geo-import-pipeline</strong>
+  {% if user %}
+  <nav>
+    <a href="{{ base }}/sources">Quellen</a>
+    <a href="{{ base }}/map">Karte</a>
+    <a href="{{ base }}/reports">Berichte</a>
+    <a href="{{ base }}/import">Import</a>
+    <a href="{{ base }}/config">Konfiguration</a>
+    <a href="/api/">API</a>
+  </nav>
+  <form method="post" action="{{ base }}/logout" class="logout">
+    <span>{{ user.name }} ({{ user.role }})</span> <button type="submit">Abmelden</button>
+  </form>
+  {% endif %}
+</header>
+<main>{% block content %}{% endblock %}</main>
+<footer><a href="/">Startseite</a> · <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></footer>
+</body>
+</html>

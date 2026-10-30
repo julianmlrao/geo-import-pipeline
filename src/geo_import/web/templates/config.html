@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Konfiguration{% endblock %}
+{% block content %}
+<h1>Konfiguration (nur lesend)</h1>
+<p>Jede Quelle ist eine YAML-Datei. Eine neue Quelle anbinden heißt: eine neue Datei anlegen, kein Code.</p>
+{% for name, text in files.items() %}<h2><code>config/sources/{{ name }}</code></h2><pre>{{ text }}</pre>{% endfor %}
+{% endblock %}

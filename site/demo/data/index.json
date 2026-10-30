@@ -1,0 +1,101 @@
+{
+ "layers": [
+  {
+   "source_id": "bb_gemeinden",
+   "title": "Gemeindegrenzen Brandenburg",
+   "kind": "polygon",
+   "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)",
+   "count": 413
+  },
+  {
+   "source_id": "bb_hausadressen_potsdam",
+   "title": "Hauskoordinaten Potsdam (Ausschnitt)",
+   "kind": "point",
+   "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)",
+   "count": 3000
+  }
+ ],
+ "sources": [
+  {
+   "source_id": "bb_gemeinden",
+   "title": "Gemeindegrenzen Brandenburg",
+   "source_type": "wfs",
+   "url": "https://isk.geobasis-bb.de/ows/vg_wfs",
+   "layer": "app:gem",
+   "license": "dl-de/by-2-0",
+   "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)",
+   "crs_source": "EPSG:25833",
+   "crs_target": "EPSG:4326",
+   "last_import_at": "2026-10-30T17:58:04.718564+00:00",
+   "last_run_id": "20261030T175032Z-5b12",
+   "record_count": 413,
+   "details": {
+    "theme": "Verwaltungsgrenzen",
+    "keywords": [
+     "Gemeinde",
+     "Verwaltungsgrenze",
+     "AGS"
+    ],
+    "publisher": "Landesvermessung und Geobasisinformation Brandenburg (LGB)"
+   }
+  },
+  {
+   "source_id": "bb_hausadressen_potsdam",
+   "title": "Hauskoordinaten Potsdam (Ausschnitt)",
+   "source_type": "wfs",
+   "url": "https://isk.geobasis-bb.de/ows/gaz_wfs",
+   "layer": "app:Hauskoordinaten",
+   "license": "dl-de/by-2-0",
+   "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)",
+   "crs_source": "EPSG:25833",
+   "crs_target": "EPSG:4326",
+   "last_import_at": "2026-10-30T17:58:11.680556+00:00",
+   "last_run_id": "20261030T175032Z-5b12",
+   "record_count": 3000,
+   "details": {
+    "theme": "Adressen",
+    "keywords": [
+     "Adresse",
+     "Hauskoordinate"
+    ],
+    "publisher": "Landesvermessung und Geobasisinformation Brandenburg (LGB)"
+   }
+  },
+  {
+   "source_id": "destatis_gemeinden_bevoelkerung",
+   "title": "Fläche und Bevölkerung der Gemeinden Brandenburgs",
+   "source_type": "csv",
+   "url": "data/samples/gemeinden_bevoelkerung.csv",
+   "layer": null,
+   "license": "dl-de/by-2-0",
+   "attribution": "© Statistische Ämter des Bundes und der Länder (Destatis), dl-de/by-2-0, Gebietsstand 30.06.2026",
+   "crs_source": "EPSG:4326",
+   "crs_target": "EPSG:4326",
+   "last_import_at": "2026-10-30T17:58:14.615758+00:00",
+   "last_run_id": "20261030T175032Z-5b12",
+   "record_count": 413,
+   "details": {
+    "theme": "Bevölkerung",
+    "keywords": [
+     "Einwohner",
+     "Fläche",
+     "AGS"
+    ],
+    "publisher": "Statistisches Bundesamt (Destatis), Gemeindeverzeichnis GV-ISys",
+    "join_target": "bb_gemeinden"
+   }
+  }
+ ],
+ "reports": [
+  {
+   "run_id": "20261030T175032Z-5b12",
+   "started_at": "2026-10-30T17:50:32+00:00",
+   "status": "success"
+  }
+ ],
+ "config": [
+  "bb_gemeinden.yaml",
+  "bb_hausadressen_potsdam.yaml",
+  "destatis_gemeinden_bevoelkerung.yaml"
+ ]
+}

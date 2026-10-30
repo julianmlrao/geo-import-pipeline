@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Import{% endblock %}
+{% block content %}
+<h1>Import starten</h1>
+<p>Die Demo-Rolle darf höchstens einen Lauf je 10 Minuten auslösen (global). Der Lauf ersetzt die Daten der gewählten Quelle(n).</p>
+<form id="importform" class="card" data-base="{{ base }}">
+  <label>Quelle <select name="source"><option value="">Alle Quellen</option>
+  {% for s in source_ids %}<option>{{ s }}</option>{% endfor %}</select></label>
+  <button type="submit">Import jetzt starten</button>
+</form>
+<p id="status" role="status">–</p>
+<script src="{{ base }}/static/import.js"></script>
+{% endblock %}

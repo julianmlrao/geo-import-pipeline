@@ -31,6 +31,9 @@ def _run(source_ids: list[str]) -> None:
 def serve() -> None:
     """Block and run sources on their cron schedule; optionally one run at startup."""
     _migrate()
+    from geo_import import trigger
+
+    trigger.start_background()
     sources = config.load_sources(config.sources_dir())
     sched = BlockingScheduler(timezone=os.environ.get("TZ", "UTC"))
     groups: dict[str, list[str]] = {}

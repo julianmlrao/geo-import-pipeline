@@ -1,0 +1,33 @@
+source_id: bb_hausadressen_potsdam
+title: Hauskoordinaten Potsdam (Ausschnitt)
+type: wfs
+url: https://isk.geobasis-bb.de/ows/gaz_wfs
+layer: app:Hauskoordinaten
+version: "2.0.0"
+crs_source: EPSG:25833
+page_size: 500
+timeout: 300
+max_features: 3000   # demo excerpt; remove for the complete layer
+feature_key: id
+filter: >-
+  <fes:Filter xmlns:fes="http://www.opengis.net/fes/2.0"><fes:PropertyIsEqualTo>
+  <fes:ValueReference>gemeindeschluessel</fes:ValueReference><fes:Literal>12054000</fes:Literal>
+  </fes:PropertyIsEqualTo></fes:Filter>
+mapping:
+  id: adresse_id
+  gemeindename: gemeinde
+  ortsteilname: ortsteil
+  strassenname: strasse
+  hnr_adz: hausnummer
+  post_plz: plz
+  adresse_amtlich: adresse
+  akt: aktualitaet
+types:
+  aktualitaet: { type: date }
+license: dl-de/by-2-0
+attribution: "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)"
+schedule: "30 3 * * 1"
+details:
+  theme: Adressen
+  publisher: Landesvermessung und Geobasisinformation Brandenburg (LGB)
+  keywords: [Adresse, Hauskoordinate]

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statische Demo – geo-import-pipeline</title>
+<link rel="stylesheet" href="../vendor/maplibre/maplibre-gl.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<header>
+  <strong>geo-import-pipeline</strong> <span class="tag">statische Demo</span>
+  <nav id="tabs">
+    <a href="#karte">Karte</a><a href="#quellen">Quellen</a><a href="#berichte">Berichte</a><a href="#konfiguration">Konfiguration</a>
+  </nav>
+  <a class="back" href="../">← Startseite</a>
+</header>
+<main>
+  <section id="karte" hidden>
+    <div class="maprow"><div id="map"></div>
+    <aside><h2>Ebenen</h2><div id="layers"></div><h2>Objekt</h2><div id="info">Objekt in der Karte anklicken.</div></aside></div>
+  </section>
+  <section id="quellen" hidden><h1>Quellen</h1><div class="scroll"><table id="srctable"></table></div></section>
+  <section id="berichte" hidden><h1>Import-Berichte</h1><div id="replist"></div><article id="repview" class="scroll"></article></section>
+  <section id="konfiguration" hidden><h1>Konfiguration</h1>
+    <p>Jede Quelle ist eine YAML-Datei. Eine neue Quelle anbinden heißt: eine neue Datei anlegen, kein Code.</p><div id="cfg"></div></section>
+</main>
+<footer>Die Daten dieser Seite sind der Export eines echten Importlaufs (siehe Berichte). Die Live-Variante mit Datenbank, Login und Import-Knopf läuft per Docker Compose, siehe <a href="https://github.com/">README</a>. · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></footer>
+<script src="../vendor/maplibre/maplibre-gl.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Bericht{% endblock %}
+{% block content %}
+<p><a href="{{ base }}/reports">← Alle Berichte</a> · <a href="{{ base }}/reports/{{ run_id }}.json">JSON herunterladen</a></p>
+<article class="report scroll">{{ html | safe }}</article>
+{% endblock %}

@@ -5,7 +5,8 @@ url: https://isk.geobasis-bb.de/ows/vg_wfs
 layer: app:gem
 version: "2.0.0"
 crs_source: EPSG:25833
-page_size: 100
+page_size: 50
+timeout: 300
 feature_key: ags
 mapping:
   ags: ags

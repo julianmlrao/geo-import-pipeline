@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Quellen{% endblock %}
+{% block content %}
+<h1>Quellen</h1>
+<div class="scroll"><table>
+<thead><tr><th>Quelle</th><th>Typ</th><th>Lizenz</th><th>Letzter Import</th><th class="num">Datensätze</th></tr></thead>
+<tbody>
+{% for r in rows %}
+<tr><td><strong>{{ r.title }}</strong><br><code>{{ r.source_id }}</code></td><td>{{ r.source_type }}</td>
+<td>{{ r.license or "–" }}</td><td>{{ r.last_import_at.strftime("%d.%m.%Y %H:%M") if r.last_import_at else "–" }}</td>
+<td class="num">{{ r.record_count }}</td></tr>
+{% else %}<tr><td colspan="5">Noch keine Daten importiert.</td></tr>{% endfor %}
+</tbody></table></div>
+<p>OGC API Features (nur lesend): <a href="/api/collections">/api/collections</a></p>
+{% endblock %}
