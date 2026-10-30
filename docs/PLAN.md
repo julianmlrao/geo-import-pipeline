@@ -8,6 +8,6 @@
 - [x] Docker, Compose, Prod-Overlay, Caddy
 - [x] Weboberfläche mit Anmeldung, Karte, Berichte, Import-Knopf
 - [x] Landingpage, statische Demo, Impressum/Datenschutz
-- [ ] Repository öffentlich, CI grün
-- [ ] Veröffentlichung GitHub Pages (Ausweichlösung), Live-Abnahme
-- [ ] Release v0.1.0
+- [x] Repository öffentlich, CI grün
+- [x] Veröffentlichung GitHub Pages (Ausweichlösung), Live-Abnahme
+- [x] Release v0.1.0
