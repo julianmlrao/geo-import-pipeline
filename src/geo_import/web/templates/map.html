@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Karte{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ base }}/vendor/maplibre/maplibre-gl.css">{% endblock %}
+{% block content %}
+<div id="map" data-base="{{ base }}" data-tiles="{{ tiles }}"></div>
+<aside id="panel"><h2>Ebenen</h2><div id="layers"></div><h2>Objekt</h2><div id="info">Objekt in der Karte anklicken.</div></aside>
+<script src="{{ base }}/vendor/maplibre/maplibre-gl.js"></script>
+<script src="{{ base }}/static/map.js"></script>
+{% endblock %}

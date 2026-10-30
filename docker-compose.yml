@@ -1,0 +1,55 @@
+# Local stack: PostGIS + importer (scheduler + trigger). Optional: --profile viewer
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-geo}
+      POSTGRES_USER: ${POSTGRES_USER:-geo_import}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      GEO_READER_PASSWORD: ${GEO_READER_PASSWORD:-reader}
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    logging: &log
+      driver: json-file
+      options: { max-size: "10m", max-file: "3" }
+
+  importer:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_DB: ${POSTGRES_DB:-geo}
+      POSTGRES_USER: ${POSTGRES_USER:-geo_import}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      GEO_IMPORT_RUN_ON_START: ${GEO_IMPORT_RUN_ON_START:-0}
+      GEO_IMPORT_TRIGGER_TOKEN: ${GEO_IMPORT_TRIGGER_TOKEN:-}
+      GEO_IMPORT_LOG_JSON: "1"
+      TZ: Europe/Berlin
+    volumes:
+      - reports:/app/reports
+      - ./config/sources:/app/config/sources:ro
+    logging: *log
+
+  pg_tileserv:
+    profiles: ["viewer"]
+    image: pramsey/pg_tileserv:latest
+    restart: unless-stopped
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      DATABASE_URL: postgresql://geo_reader:${GEO_READER_PASSWORD:-reader}@db/${POSTGRES_DB:-geo}
+    ports: ["127.0.0.1:7800:7800"]
+    logging: *log
+
+volumes:
+  dbdata:
+  reports:

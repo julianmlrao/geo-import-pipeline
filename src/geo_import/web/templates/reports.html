@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Berichte{% endblock %}
+{% block content %}
+<h1>Import-Berichte</h1>
+<table><thead><tr><th>Lauf</th><th>Start</th><th>Status</th><th></th></tr></thead><tbody>
+{% for r in rows %}
+<tr><td><a href="{{ base }}/reports/{{ r.run_id }}">{{ r.run_id }}</a></td>
+<td>{{ r.started_at.strftime("%d.%m.%Y %H:%M") }}</td><td>{{ r.status }}</td>
+<td><a href="{{ base }}/reports/{{ r.run_id }}.json">JSON</a></td></tr>
+{% else %}<tr><td colspan="4">Noch kein Lauf.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

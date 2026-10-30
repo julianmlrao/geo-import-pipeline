@@ -1,0 +1,19 @@
+name: deploy
+# Manual only. Needs repository secrets DEPLOY_SSH_KEY, DEPLOY_SSH_KNOWN_HOSTS and the .env.deploy values.
+on: workflow_dispatch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare SSH and settings
+        env:
+          KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN: ${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}
+          ENV_DEPLOY: ${{ secrets.ENV_DEPLOY }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN" > ~/.ssh/known_hosts
+          printf '%s\n' "$ENV_DEPLOY" > .env.deploy
+      - run: ./scripts/deploy.sh

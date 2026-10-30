@@ -5,7 +5,8 @@ url: https://isk.geobasis-bb.de/ows/gaz_wfs
 layer: app:Hauskoordinaten
 version: "2.0.0"
 crs_source: EPSG:25833
-page_size: 1000
+page_size: 500
+timeout: 300
 max_features: 3000   # demo excerpt; remove for the complete layer
 feature_key: id
 filter: >-
