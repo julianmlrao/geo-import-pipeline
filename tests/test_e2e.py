@@ -82,7 +82,7 @@ def test_two_runs(conn, tmp_path, monkeypatch):
     assert by["kaputt"].status == "failed" and "HTTP 500" in (by["kaputt"].error or "")
     assert (by["gem"].new, by["gem"].total) == (3, 3)
     assert (by["bev"].new, by["bev"].total) == (2, 2)
-    assert any("match no geometry" in w for w in by["bev"].warnings) is False
+    assert any("ohne passende Geometrie" in w for w in by["bev"].warnings) is False
 
     # report numbers agree with the database
     assert (

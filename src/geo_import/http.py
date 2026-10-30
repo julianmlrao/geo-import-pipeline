@@ -28,23 +28,23 @@ def get(
 ) -> requests.Response:
     """GET with retries on network errors and 429/5xx; raises FetchError with the cause."""
     sess = session or requests.Session()
-    last = "unknown error"
+    last = "unbekannter Fehler"
     for attempt in range(retries + 1):
         try:
             resp = sess.get(url, params=params, timeout=timeout, headers={"User-Agent": USER_AGENT})
             if resp.status_code not in RETRY_STATUS:
                 if resp.status_code >= 400:
-                    raise FetchError(f"HTTP {resp.status_code} from {url}")
+                    raise FetchError(f"HTTP {resp.status_code} von {url}")
                 return resp
             last = f"HTTP {resp.status_code}"
         except requests.Timeout:
-            last = f"timeout after {timeout:.0f}s"
+            last = f"Zeitüberschreitung nach {timeout:.0f} s"
         except requests.ConnectionError as exc:
-            last = f"connection failed: {type(exc).__name__}"
+            last = f"Verbindung fehlgeschlagen: {type(exc).__name__}"
         if attempt < retries:
             delay = backoff**attempt
             log.warning(
                 "fetch failed (%s), retry %d/%d in %.0fs", last, attempt + 1, retries, delay
             )
             time.sleep(delay)
-    raise FetchError(f"{url}: {last} (after {retries + 1} attempts)")
+    raise FetchError(f"{url}: {last} (nach {retries + 1} Versuchen)")

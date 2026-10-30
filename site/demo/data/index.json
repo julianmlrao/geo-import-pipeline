@@ -26,8 +26,8 @@
    "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)",
    "crs_source": "EPSG:25833",
    "crs_target": "EPSG:4326",
-   "last_import_at": "2026-10-30T17:58:04.718564+00:00",
-   "last_run_id": "20261030T175032Z-5b12",
+   "last_import_at": "2026-10-30T22:36:47.041570+00:00",
+   "last_run_id": "20261030T223618Z-9d4e",
    "record_count": 413,
    "details": {
     "theme": "Verwaltungsgrenzen",
@@ -49,8 +49,8 @@
    "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)",
    "crs_source": "EPSG:25833",
    "crs_target": "EPSG:4326",
-   "last_import_at": "2026-10-30T17:58:11.680556+00:00",
-   "last_run_id": "20261030T175032Z-5b12",
+   "last_import_at": "2026-10-30T22:36:51.383892+00:00",
+   "last_run_id": "20261030T223618Z-9d4e",
    "record_count": 3000,
    "details": {
     "theme": "Adressen",
@@ -71,8 +71,8 @@
    "attribution": "© Statistische Ämter des Bundes und der Länder (Destatis), dl-de/by-2-0, Gebietsstand 30.06.2026",
    "crs_source": "EPSG:4326",
    "crs_target": "EPSG:4326",
-   "last_import_at": "2026-10-30T17:58:14.615758+00:00",
-   "last_run_id": "20261030T175032Z-5b12",
+   "last_import_at": "2026-10-30T22:37:01.414157+00:00",
+   "last_run_id": "20261030T223618Z-9d4e",
    "record_count": 413,
    "details": {
     "theme": "Bevölkerung",
@@ -88,14 +88,20 @@
  ],
  "reports": [
   {
-   "run_id": "20261030T175032Z-5b12",
-   "started_at": "2026-10-30T17:50:32+00:00",
+   "run_id": "20261030T223618Z-9d4e",
+   "started_at": "2026-10-30T22:36:18+00:00",
+   "status": "partial"
+  },
+  {
+   "run_id": "20261030T223542Z-9a04",
+   "started_at": "2026-10-30T22:35:42+00:00",
    "status": "success"
   }
  ],
  "config": [
   "bb_gemeinden.yaml",
   "bb_hausadressen_potsdam.yaml",
+  "beispiel_fehlerfall.yaml",
   "destatis_gemeinden_bevoelkerung.yaml"
  ]
 }

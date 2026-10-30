@@ -112,7 +112,7 @@ def load_source(
             diff.unmatched_join_keys = sum(1 for f in features if f.key not in target)
             if diff.unmatched_join_keys:
                 warnings.append(
-                    f"{diff.unmatched_join_keys} records match no geometry in "
+                    f"{diff.unmatched_join_keys} Datensätze ohne passende Geometrie in "
                     f"{cfg.join.target_source}"
                 )
         details = dict(cfg.details)

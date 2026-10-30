@@ -94,9 +94,9 @@ def main() -> None:
         (OUT / "reports" / f"{r['run_id']}.md").write_text(
             report.to_markdown(r["report"]), encoding="utf-8"
         )
-    files = sorted(p.name for p in Path("config/sources").glob("*.y*ml"))
+    files = sorted(p.name for p in config.sources_dir().glob("*.y*ml"))
     for name in files:
-        shutil.copy(Path("config/sources") / name, OUT / "config" / name)
+        shutil.copy(config.sources_dir() / name, OUT / "config" / name)
     index = {
         "layers": layers,
         "sources": [

@@ -68,12 +68,12 @@ def run_source(
         result = transform.transform_features(cfg, raw, needs_geom)
         sr.warnings += result.warnings
         if not result.features:
-            raise validate.ValidationError("no usable records after transformation; data kept")
+            raise validate.ValidationError(
+                "keine verwertbaren Datensätze nach der Transformation; Bestand bleibt erhalten"
+            )
         detected = getattr(adapter, "detected_crs", None)
         if detected and cfg.crs_source.split(":")[-1] not in detected:
-            sr.warnings.append(
-                f"server reports CRS {detected}, configuration says {cfg.crs_source}"
-            )
+            sr.warnings.append(f"Dienst meldet KBS {detected}, Konfiguration sagt {cfg.crs_source}")
         diff = load.load_source(conn, cfg, result.features, run_id, cfg.crs_source, sr.warnings)
         sr.new, sr.changed, sr.deleted = diff.new, diff.changed, diff.deleted
         sr.unchanged, sr.total = diff.unchanged, diff.total

@@ -129,11 +129,11 @@ def transform_features(
             feat.geom_hash = geom_digest(geom)
         out[key] = feat
     for count, text in (
-        (skipped, "records without feature_key skipped"),
-        (no_geom, "records without geometry skipped"),
-        (dup, "duplicate feature_key values dropped (first kept)"),
-        (invalid, "invalid geometries repaired (make_valid)"),
-        (bad_values, "values not convertible to configured type dropped"),
+        (skipped, "Datensätze ohne Schlüssel übersprungen"),
+        (no_geom, "Datensätze ohne Geometrie übersprungen"),
+        (dup, "doppelte Schlüssel verworfen (erster bleibt)"),
+        (invalid, "ungültige Geometrien repariert (make_valid)"),
+        (bad_values, "Werte nicht in den konfigurierten Typ umwandelbar, verworfen"),
     ):
         if count:
             warnings.append(f"{count} {text}")

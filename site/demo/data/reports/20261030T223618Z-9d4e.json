@@ -1,0 +1,87 @@
+{
+  "run_id": "20261030T223618Z-9d4e",
+  "status": "partial",
+  "sources": [
+    {
+      "new": 0,
+      "type": "wfs",
+      "error": null,
+      "title": "Gemeindegrenzen Brandenburg",
+      "total": 413,
+      "status": "success",
+      "changed": 0,
+      "deleted": 0,
+      "license": "dl-de/by-2-0",
+      "ended_at": "2026-10-30T22:36:48+00:00",
+      "warnings": [
+        "4 nicht zugeordnete Quellfelder ignoriert: gem_art_kurz, gem_regspr_hk, gem_regspr_name, gvbs"
+      ],
+      "source_id": "bb_gemeinden",
+      "unchanged": 413,
+      "duration_s": 30.18,
+      "started_at": "2026-10-30T22:36:18+00:00",
+      "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)"
+    },
+    {
+      "new": 0,
+      "type": "wfs",
+      "error": null,
+      "title": "Hauskoordinaten Potsdam (Ausschnitt)",
+      "total": 3000,
+      "status": "success",
+      "changed": 0,
+      "deleted": 0,
+      "license": "dl-de/by-2-0",
+      "ended_at": "2026-10-30T22:36:54+00:00",
+      "warnings": [
+        "28 nicht zugeordnete Quellfelder ignoriert: adresse_amtlich_normalisiert, adresse_postalisch, adresse_postalisch_normalisiert, adz, gemeindename_normalisiert, gemeindeschluessel, gemeindeverbandsname, gemeindeverbandsname_normalisiert …"
+      ],
+      "source_id": "bb_hausadressen_potsdam",
+      "unchanged": 3000,
+      "duration_s": 5.79,
+      "started_at": "2026-10-30T22:36:48+00:00",
+      "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)"
+    },
+    {
+      "new": 0,
+      "type": "wfs",
+      "error": "FetchError: https://nicht-erreichbar.invalid/wfs: Verbindung fehlgeschlagen: ConnectionError (nach 4 Versuchen)",
+      "title": "Beispiel für Fehlerfall (absichtlich nicht erreichbar)",
+      "total": 0,
+      "status": "failed",
+      "changed": 0,
+      "deleted": 0,
+      "license": null,
+      "ended_at": "2026-10-30T22:37:01+00:00",
+      "warnings": [],
+      "source_id": "beispiel_fehlerfall",
+      "unchanged": 0,
+      "duration_s": 7.13,
+      "started_at": "2026-10-30T22:36:54+00:00",
+      "attribution": null
+    },
+    {
+      "new": 0,
+      "type": "csv",
+      "error": null,
+      "title": "Fläche und Bevölkerung der Gemeinden Brandenburgs",
+      "total": 413,
+      "status": "success",
+      "changed": 0,
+      "deleted": 0,
+      "license": "dl-de/by-2-0",
+      "ended_at": "2026-10-30T22:37:01+00:00",
+      "warnings": [
+        "1 nicht zugeordnete Quellfelder ignoriert: Gemeinde"
+      ],
+      "source_id": "destatis_gemeinden_bevoelkerung",
+      "unchanged": 413,
+      "duration_s": 0.3,
+      "started_at": "2026-10-30T22:37:01+00:00",
+      "attribution": "© Statistische Ämter des Bundes und der Länder (Destatis), dl-de/by-2-0, Gebietsstand 30.06.2026"
+    }
+  ],
+  "ended_at": "2026-10-30T22:37:01+00:00",
+  "duration_s": 43.43,
+  "started_at": "2026-10-30T22:36:18+00:00"
+}

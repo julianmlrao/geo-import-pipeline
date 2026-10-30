@@ -71,7 +71,7 @@ class WfsAdapter:
             new = [f for f in page if f.fid is None or f.fid not in seen]
             if page and not new:
                 self.stats.warnings.append(
-                    "server ignored STARTINDEX (repeated features); stopped paging"
+                    "Dienst ignoriert STARTINDEX (wiederholte Objekte); Paginierung abgebrochen"
                 )
                 return
             seen.update(f.fid for f in new if f.fid)
@@ -85,7 +85,7 @@ class WfsAdapter:
 
         data = json.loads(content)
         if data.get("type") != "FeatureCollection":
-            raise http.FetchError(f"unexpected GeoJSON response: {str(data)[:200]}")
+            raise http.FetchError(f"unerwartete GeoJSON-Antwort: {str(data)[:200]}")
         for i, f in enumerate(data["features"]):
             geom = shape(f["geometry"]) if f.get("geometry") else None
             yield RawFeature(f.get("properties") or {}, geom, str(f.get("id", i)))
@@ -99,7 +99,7 @@ class WfsAdapter:
                 if local(e) in ("ExceptionText", "ServiceException")
             ]
             msg = " ".join(parts)
-            raise http.FetchError(f"WFS exception: {msg[:300]}")
+            raise http.FetchError(f"WFS-Fehlermeldung: {msg[:300]}")
         for _ev, member in etree.iterparse(io.BytesIO(content), tag="{*}member"):
             feature = next(iter(member), None)
             if feature is None:

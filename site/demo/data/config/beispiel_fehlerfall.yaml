@@ -1,0 +1,9 @@
+source_id: beispiel_fehlerfall
+title: "Beispiel für Fehlerfall (absichtlich nicht erreichbar)"
+type: wfs
+url: https://nicht-erreichbar.invalid/wfs
+layer: app:beispiel
+feature_key: id
+timeout: 10
+details:
+  hinweis: Absichtlich nicht erreichbarer Dienst, um die Fehlerbehandlung zu zeigen.

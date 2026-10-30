@@ -75,7 +75,7 @@ def test_wfs_exception_report_raises():
 def test_retries_then_fails(monkeypatch):
     monkeypatch.setattr(http.time, "sleep", lambda s: None)
     responses.add(responses.GET, URL, status=503)
-    with pytest.raises(http.FetchError, match="after 4 attempts"):
+    with pytest.raises(http.FetchError, match="nach 4 Versuchen"):
         list(WfsAdapter(cfg()).fetch())
     assert len(responses.calls) == 4
 

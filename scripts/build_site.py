@@ -161,6 +161,7 @@ def main() -> None:
     )
     impressum = f"""<p>{imp("NAME", "Name")}<br>{imp("ANSCHRIFT", "Anschrift")}</p>
 <p>Vertreten durch: {imp("VERTRETEN", "Vertretungsberechtigte Person")}</p>
+<p>Registereintrag: {imp("REGISTER", "Registergericht und Nummer")}</p>
 <p>Kontakt: {imp("EMAIL", "E-Mail")}</p>
 <p>Diese Seite ist ein Demonstrator für das Open-Source-Projekt geo-import-pipeline.</p>"""
     (SITE / "impressum.html").write_text(

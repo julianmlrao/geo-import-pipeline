@@ -1,5 +1,5 @@
 {
-  "run_id": "20261030T175032Z-5b12",
+  "run_id": "20261030T223542Z-9a04",
   "status": "success",
   "sources": [
     {
@@ -12,14 +12,14 @@
       "changed": 0,
       "deleted": 0,
       "license": "dl-de/by-2-0",
-      "ended_at": "2026-10-30T17:58:06+00:00",
+      "ended_at": "2026-10-30T22:36:10+00:00",
       "warnings": [
-        "4 unmapped source fields ignored: gem_art_kurz, gem_regspr_hk, gem_regspr_name, gvbs"
+        "4 nicht zugeordnete Quellfelder ignoriert: gem_art_kurz, gem_regspr_hk, gem_regspr_name, gvbs"
       ],
       "source_id": "bb_gemeinden",
       "unchanged": 0,
-      "duration_s": 454.07,
-      "started_at": "2026-10-30T17:50:32+00:00",
+      "duration_s": 27.96,
+      "started_at": "2026-10-30T22:35:42+00:00",
       "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)"
     },
     {
@@ -32,14 +32,14 @@
       "changed": 0,
       "deleted": 0,
       "license": "dl-de/by-2-0",
-      "ended_at": "2026-10-30T17:58:14+00:00",
+      "ended_at": "2026-10-30T22:36:17+00:00",
       "warnings": [
-        "28 unmapped source fields ignored: adresse_amtlich_normalisiert, adresse_postalisch, adresse_postalisch_normalisiert, adz, gemeindename_normalisiert, gemeindeschluessel, gemeindeverbandsname, gemeindeverbandsname_normalisiert …"
+        "28 nicht zugeordnete Quellfelder ignoriert: adresse_amtlich_normalisiert, adresse_postalisch, adresse_postalisch_normalisiert, adz, gemeindename_normalisiert, gemeindeschluessel, gemeindeverbandsname, gemeindeverbandsname_normalisiert …"
       ],
       "source_id": "bb_hausadressen_potsdam",
       "unchanged": 0,
-      "duration_s": 8.08,
-      "started_at": "2026-10-30T17:58:06+00:00",
+      "duration_s": 6.75,
+      "started_at": "2026-10-30T22:36:10+00:00",
       "attribution": "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)"
     },
     {
@@ -52,18 +52,18 @@
       "changed": 0,
       "deleted": 0,
       "license": "dl-de/by-2-0",
-      "ended_at": "2026-10-30T17:58:14+00:00",
+      "ended_at": "2026-10-30T22:36:17+00:00",
       "warnings": [
-        "1 unmapped source fields ignored: Gemeinde"
+        "1 nicht zugeordnete Quellfelder ignoriert: Gemeinde"
       ],
       "source_id": "destatis_gemeinden_bevoelkerung",
       "unchanged": 0,
-      "duration_s": 0.24,
-      "started_at": "2026-10-30T17:58:14+00:00",
+      "duration_s": 0.23,
+      "started_at": "2026-10-30T22:36:17+00:00",
       "attribution": "© Statistische Ämter des Bundes und der Länder (Destatis), dl-de/by-2-0, Gebietsstand 30.06.2026"
     }
   ],
-  "ended_at": "2026-10-30T17:58:14+00:00",
-  "duration_s": 462.45,
-  "started_at": "2026-10-30T17:50:32+00:00"
+  "ended_at": "2026-10-30T22:36:17+00:00",
+  "duration_s": 34.98,
+  "started_at": "2026-10-30T22:35:42+00:00"
 }

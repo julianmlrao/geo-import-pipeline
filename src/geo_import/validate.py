@@ -12,7 +12,7 @@ class ValidationError(RuntimeError):
 
 def check_schema(cfg: WfsSource | CsvSource, raw: list[RawFeature]) -> list[str]:
     if not raw:
-        raise ValidationError("source returned no records; existing data kept")
+        raise ValidationError("Quelle lieferte keine Datensätze; Bestand bleibt erhalten")
     seen: set[str] = set()
     for rf in raw:
         seen.update(rf.properties)
@@ -22,12 +22,12 @@ def check_schema(cfg: WfsSource | CsvSource, raw: list[RawFeature]) -> list[str]
         expected.add(cfg.join.on)
     missing = sorted(expected - seen)
     if cfg.feature_key not in seen:
-        raise ValidationError(f"feature_key field {cfg.feature_key!r} not found in source")
+        raise ValidationError(f"Schlüsselfeld {cfg.feature_key!r} in der Quelle nicht gefunden")
     if missing:
-        warnings.append(f"configured fields missing in source: {', '.join(missing)}")
+        warnings.append(f"In der Quelle fehlen konfigurierte Felder: {', '.join(missing)}")
     if not cfg.keep_unmapped:
         extra = sorted(seen - expected)
         if extra:
             shown = ", ".join(extra[:8]) + (" …" if len(extra) > 8 else "")
-            warnings.append(f"{len(extra)} unmapped source fields ignored: {shown}")
+            warnings.append(f"{len(extra)} nicht zugeordnete Quellfelder ignoriert: {shown}")
     return warnings

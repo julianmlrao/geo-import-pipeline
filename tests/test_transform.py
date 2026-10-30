@@ -47,8 +47,8 @@ def test_mapping_dedup_invalid_geometry_and_missing_key():
     assert [f.key for f in res.features] == ["a", "b"]
     assert "extra" not in res.features[0].attrs
     joined = " ".join(res.warnings)
-    assert "duplicate" in joined and "without feature_key" in joined
-    assert "invalid geometries repaired" in joined and "without geometry" in joined
+    assert "doppelte Schlüssel" in joined and "ohne Schlüssel" in joined
+    assert "ungültige Geometrien repariert" in joined and "ohne Geometrie" in joined
     assert bowtie is not None
     assert res.features[1].geom.is_valid
 
