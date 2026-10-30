@@ -70,7 +70,7 @@ def to_markdown(r: dict[str, Any]) -> str:
     failed = [s for s in srcs if s["status"] != "success"]
     if failed:
         lines += ["", "## Fehlgeschlagene Quellen", ""]
-        lines += [f"- `{s['source_id']}`: {s['error']}" for s in failed]
+        lines += [f"- `{s['source_id']}` ({s['title']}): {s['error']}" for s in failed]
     warned = [s for s in srcs if s["warnings"]]
     if warned:
         lines += ["", "## Warnungen", ""]
