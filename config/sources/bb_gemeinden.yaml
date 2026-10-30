@@ -1,0 +1,26 @@
+source_id: bb_gemeinden
+title: Gemeindegrenzen Brandenburg
+type: wfs
+url: https://isk.geobasis-bb.de/ows/vg_wfs
+layer: app:gem
+version: "2.0.0"
+crs_source: EPSG:25833
+page_size: 100
+feature_key: ags
+mapping:
+  ags: ags
+  gem_name: name
+  gem_art: gemeindeart
+  krss: kreisschluessel
+  ars: regionalschluessel
+  gem_aktualitaet: aktualitaet
+types:
+  aktualitaet: { type: date }
+license: dl-de/by-2-0
+attribution: "© GeoBasis-DE/LGB, dl-de/by-2-0 (Daten geändert)"
+schedule: "0 3 * * 1"
+mode: replace
+details:
+  theme: Verwaltungsgrenzen
+  publisher: Landesvermessung und Geobasisinformation Brandenburg (LGB)
+  keywords: [Gemeinde, Verwaltungsgrenze, AGS]
