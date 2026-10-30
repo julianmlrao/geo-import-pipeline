@@ -30,7 +30,8 @@ templates = Jinja2Templates(directory=str(HERE / "templates"))
 
 CSP = (
     "default-src 'self'; img-src 'self' data: https://sgx.geodatenzentrum.de; "
-    "worker-src blob:; child-src blob:; connect-src 'self' https://sgx.geodatenzentrum.de; style-src 'self' 'unsafe-inline'; "
+    "worker-src blob:; child-src blob:; connect-src 'self' https://sgx.geodatenzentrum.de; "
+    "style-src 'self' 'unsafe-inline'; "
     "script-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 )
 
